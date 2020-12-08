@@ -3,6 +3,7 @@ var cors = require("cors");
 var bodyParser = require("body-parser");
 let data = require("./data");
 const db = require("./db");
+let places = require("./places");
 const app = express();
 const port = process.env.PORT || 3002;
 
@@ -20,22 +21,19 @@ app.get("/", (request, response) => {
 });
 
 app.get("/places", (request, response) => {
-  db.getQuizzes()
-    .then((x) => response.json(x))
-    .catch((e) =>
-      response.status(500).json({ error: "Quizzes could not be retrieved." })
-    );
+  let metadata = places.places.map((x) => {
+    return { type: x.type, places: x.places };
+  });
+  response.json(metadata);
 });
 
-app.get("/questions/:quizid", (request, response) => {
-  let quizid = request.params.quizid;
-  let found = data.quizes.find((x) => x.id === Number(quizid));
+app.get("/places/:type", (request, response) => {
+  let type = request.params.type;
+  let found = places.places.find((x) => x.type == type);
   if (found) {
-    response.json(found.questions);
+    response.json(found.places);
   } else {
-    response
-      .status(404)
-      .json({ error: `Quiz with id ${quizid} does not exist` });
+    response.status(404).json({ error: `places ${type} does not exist` });
   }
 });
 
