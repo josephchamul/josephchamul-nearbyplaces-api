@@ -2,6 +2,7 @@ const express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 let data = require("./data");
+const db = require("./db");
 const app = express();
 const port = process.env.PORT || 3002;
 
@@ -18,11 +19,12 @@ app.get("/", (request, response) => {
   response.send("Welcome to Image Quiz API");
 });
 
-app.get("/quizzes", (request, response) => {
-  let metadata = data.quizes.map((x) => {
-    return { name: x.name, id: x.id, picture: x.picture };
-  });
-  response.json(metadata);
+app.get("/places", (request, response) => {
+  db.getQuizzes()
+    .then((x) => response.json(x))
+    .catch((e) =>
+      response.status(500).json({ error: "Quizzes could not be retrieved." })
+    );
 });
 
 app.get("/questions/:quizid", (request, response) => {
