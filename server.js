@@ -37,10 +37,23 @@ app.get("/places/:type", (request, response) => {
   }
 });
 
-app.post("/score", (request, response) => {
-  let username = request.body.username;
-  let quizid = request.body.quizid;
-  let score = request.body.score;
-  data.scores.push({ score: score, quizid: quizid, username: username });
+app.post("/addplace", (request, response) => {
+  let name = request.body.name;
+  let rate = request.body.rate;
+  let location = request.body.location;
+  let description = request.body.description;
+  let review = request.body.review;
+  let type = request.body.type;
+  for (let i = 0; i < places.places.length; i++) {
+    if (places.places[i].type == type) {
+      i.places.push({
+        name: name,
+        rate: rate,
+        location: location,
+        description: description,
+        review: review,
+      });
+    }
+  }
   response.json({ messsage: "The score was added successfully" });
 });
