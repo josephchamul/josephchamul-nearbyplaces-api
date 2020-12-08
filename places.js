@@ -63,7 +63,7 @@ let g2 = {
 };
 
 let restaurant = {
-  type: "restaurant",
+  type: "restaurants",
   places: [r1, r2],
 };
 
