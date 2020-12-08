@@ -15,6 +15,7 @@ const postgrePool = new Pool({
 });
 
 function getPlaces() {
+  postgrePool.connect();
   return postgrePool.query("select * from imagequiz.places").then((result) => {
     console.log(result);
     if (result.rows) {
