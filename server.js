@@ -44,9 +44,10 @@ app.post("/addplace", (request, response) => {
   let description = request.body.description;
   let review = request.body.review;
   let type = request.body.type;
+  console.log(type);
   for (let i = 0; i < places.places.length; i++) {
     if (places.places[i].type == type) {
-      i.places.push({
+      places.places[i].places.push({
         name: name,
         rate: rate,
         location: location,
