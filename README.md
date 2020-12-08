@@ -1,1 +1,0 @@
-# josephchamul-nearbyplaces-api
