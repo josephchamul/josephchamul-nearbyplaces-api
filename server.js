@@ -60,7 +60,7 @@ app.post("/addplace", (request, response) => {
 });
 
 app.post("/addreview", (request, response) => {
-  let review = request.body.review;
+  let rev = request.body.review;
   let biz = request.body.biz;
   let type = request.body.type;
   console.log(type);
@@ -68,7 +68,7 @@ app.post("/addreview", (request, response) => {
     if (places.places[i].type == type) {
       for (let x = 0; x < places.places[i].length; x++) {
         if (places.places[i].places[x].name == biz) {
-          places.places[i].places[x].review.push(review);
+          places.places[i].places[x].review.push(rev);
         }
       }
     }
