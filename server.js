@@ -67,7 +67,14 @@ app.delete("/delete", (request, response) => {
     if (places.places[i].type == type) {
       for (let x = 0; i < places.places[i].places.length; i++) {
         if (places.places[i].places[x].name == biz) {
-          places.places[i].places.splice(x, 1);
+          places.places[i].places
+            .splice(x, 1)
+            .concat(
+              places.places[i].places.slice(
+                i + 1,
+                places.places[i].places.length
+              )
+            );
         }
       }
     }
