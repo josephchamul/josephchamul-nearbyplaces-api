@@ -58,3 +58,19 @@ app.post("/addplace", (request, response) => {
   }
   response.json({ messsage: "The score was added successfully" });
 });
+
+app.post("/delete", (request, response) => {
+  let type = request.body.type;
+  let biz = request.body.biz;
+  console.log(type);
+  for (let i = 0; i < places.places.length; i++) {
+    if (places.places[i].type == type) {
+      for (let x = 0; i < places.places[i].places.length; i++) {
+        if (places.places[i].places[x].name == biz) {
+          places.places[i].places.splice(x, 1);
+        }
+      }
+    }
+  }
+  response.json({ messsage: "The score was added successfully" });
+});
