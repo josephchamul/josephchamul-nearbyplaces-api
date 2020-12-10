@@ -67,7 +67,7 @@ app.post("/addreview", (request, response) => {
   for (let i = 0; i < places.places.length; i++) {
     if (places.places[i].type == type) {
       for (let x = 0; x < places.places[i].length; x++) {
-        if (places.places[i].places[x].name === biz) {
+        if (places.places[i].places[x].name == biz) {
           places.places[i].places[x].review.push(review);
         }
       }
