@@ -3,7 +3,7 @@ let r1 = {
   rate: 3,
   location: "Tucson, AZ",
   description: "Burger Fast Food Restaurant",
-  review: ["they give you your food very fast"],
+  review: ["they give you your food very fast", "the food is ok"],
   type: "restaurants",
 };
 
