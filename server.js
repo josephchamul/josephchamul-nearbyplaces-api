@@ -59,7 +59,7 @@ app.post("/addplace", (request, response) => {
   response.json({ messsage: "The score was added successfully" });
 });
 
-app.post("/delete", (request, response) => {
+app.delete("/delete", (request, response) => {
   let type = request.body.type;
   let biz = request.body.biz;
   console.log(type);
