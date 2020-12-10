@@ -59,6 +59,23 @@ app.post("/addplace", (request, response) => {
   response.json({ messsage: "The score was added successfully" });
 });
 
+app.post("/addreview", (request, response) => {
+  let review = request.body.review;
+  let biz = request.body.biz;
+  let type = request.body.type;
+  console.log(type);
+  for (let i = 0; i < places.places.length; i++) {
+    if (places.places[i].type == type) {
+      for (let x = 0; x < places.places[i].length; x++) {
+        if (places.places[i].places[x].name === biz) {
+          places.places[i].places[x].review.push(review);
+        }
+      }
+    }
+  }
+  response.json({ messsage: "The score was added successfully" });
+});
+
 app.delete("/delete", (request, response) => {
   let type = request.body.type;
   let biz = request.body.biz;
