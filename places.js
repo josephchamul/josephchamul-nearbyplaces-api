@@ -4,6 +4,7 @@ let r1 = {
   location: "Tucson, AZ",
   description: "Burger Fast Food Restaurant",
   review: ["they give you your food very fast"],
+  type: "restaurants",
 };
 
 let r2 = {
@@ -12,6 +13,7 @@ let r2 = {
   location: "Tucson, AZ",
   description: "Taco Fast Food Restaurant",
   review: ["the best food for college students on a budge"],
+  type: "restaurants",
 };
 
 let s1 = {
@@ -20,6 +22,7 @@ let s1 = {
   location: "Tucson, AZ",
   description: "The best place to shop",
   review: ["they have a lot of cool store to shop at"],
+  type: "shops",
 };
 
 let s2 = {
@@ -28,6 +31,7 @@ let s2 = {
   location: "Tucson, AZ",
   description: "The best place to shop",
   review: ["they have all the shops you will ever need"],
+  type: "shops",
 };
 
 let m1 = {
@@ -36,6 +40,7 @@ let m1 = {
   location: "Tucson, AZ",
   description: "Locally owned Vehicle Repair Shop",
   review: ["the best service you will ever get at a repair shop"],
+  type: "mechanic",
 };
 
 let m2 = {
@@ -44,6 +49,7 @@ let m2 = {
   location: "Tucson, AZ",
   description: "Quick Car Maintence Shop",
   review: ["the are the fastest at changing my oil"],
+  type: "mechanic",
 };
 
 let g1 = {
@@ -52,6 +58,7 @@ let g1 = {
   location: "Tucson, AZ",
   description: "University of Arizona Gym",
   review: ["this gym has the best equipment"],
+  type: "gym",
 };
 
 let g2 = {
@@ -60,6 +67,7 @@ let g2 = {
   location: "Tucson, AZ",
   description: "The Best Priced Gym Membership",
   review: ["this best gym if its your first time working out"],
+  type: "gym",
 };
 
 let restaurant = {
